@@ -3,14 +3,14 @@ import { Button } from 'native-base';
 
 
 
-interface CommunitySaveButtonProps {
+interface UserProfileSaveButtonProps {
   name: string;
   description: string; 
   image: string;
 }
 
 
-const CommunitySaveButton: React.FC<CommunitySaveButtonProps> = ({
+const UserProfileSaveButton: React.FC<UserProfileSaveButtonProps> = ({
   name,
   description,
   image
@@ -31,6 +31,7 @@ const CommunitySaveButton: React.FC<CommunitySaveButtonProps> = ({
       _pressed={{ bg: '#BCEAD5' }}
       onPress={handlePress}   
       colorScheme="light" 
+    
     >
       保存
     </Button>
@@ -39,4 +40,4 @@ const CommunitySaveButton: React.FC<CommunitySaveButtonProps> = ({
 
 }
 
-export default CommunitySaveButton;
+export default UserProfileSaveButton;

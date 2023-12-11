@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import { Dimensions } from 'react-native';
 import { VStack, HStack, Heading, IconButton, Icon, Box, Text, View } from 'native-base';
 import { Feather } from '@expo/vector-icons'; 
-import CommunityName from '../components/CommunityName';
-import CommunityDesc from '../components/CommunityDesc';
-import CommunitySaveButton from '../components/CommunitySaveButton';
-import CommunityActionSheetPage from '../components/CommunityImage';
+import UserProfileDesc from '../components/UserProfileDesc';
+import UserProfileName from '../components/UserProfileName';
+import UserProfileActionSheetPage from '../components/UserProfileImage';
+import UserProfileSaveButton from '../components/UserProfileSaveButton';
 
 
 export default function CommunityCreateScreen() {
@@ -23,17 +23,16 @@ export default function CommunityCreateScreen() {
     <VStack>
         <HStack alignItems="center" p={4} justifyContent="space-between" >
             <IconButton
-            icon={<Icon as={Feather} name="arrow-left" color={'#3E8E41'} />}
+            icon={<Icon as={Feather} name="arrow-left"  color={'#3E8E41'} />}
             onPress={handleGoBack}
-        
             />
-            <Heading size="lg">コミュニティ作成</Heading> 
+            <Heading size="lg">ユーザープロフィール</Heading> 
             <Box w={50}></Box>
         </HStack>
 
 
         <HStack alignItems="flex-start">
-        <CommunityActionSheetPage
+        <UserProfileActionSheetPage
         image={image}
         setImage={setImage}/>
         </HStack>
@@ -44,8 +43,8 @@ export default function CommunityCreateScreen() {
 
 
       <Box  w={width} h={100}>
-        <Text style={{fontWeight: "bold", marginLeft: 20}}>コミュニティー名</Text>
-        <CommunityName 
+        <Text style={{fontWeight: "bold", marginLeft: 20}}>ユーザー名</Text>
+        <UserProfileName 
         name={name}
         setName={setName}/> 
       </Box> 
@@ -56,8 +55,8 @@ export default function CommunityCreateScreen() {
 
 
       <Box w={width} h={100}>
-        <Text style={{fontWeight: "bold", marginLeft: 20}}>コミュニティー説明</Text>
-        <CommunityDesc 
+        <Text style={{fontWeight: "bold", marginLeft: 20}}>自己紹介</Text>
+        <UserProfileDesc 
           description={description}
           setDescription={setDescription} /> 
       </Box>
@@ -69,7 +68,7 @@ export default function CommunityCreateScreen() {
 
       <View alignItems="center">
         <Box w={150} h={100}>
-          <CommunitySaveButton 
+          <UserProfileSaveButton
           name={name}
           description={description}
           image={image}
