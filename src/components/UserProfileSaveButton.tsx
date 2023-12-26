@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'native-base';
+import { Link, useNavigation, useRouter } from "expo-router";
 
 
 
@@ -17,6 +18,7 @@ const UserProfileSaveButton: React.FC<UserProfileSaveButtonProps> = ({
   
 }) => {
   const handlePress = () => {}
+  const router = useRouter();
 
   const canSave = name.length > 2 && image;
 
@@ -29,7 +31,7 @@ const UserProfileSaveButton: React.FC<UserProfileSaveButtonProps> = ({
       isDisabled={!canSave}
       rounded="full"
       _pressed={{ bg: '#BCEAD5' }}
-      onPress={handlePress}   
+      onPress={() => router.push("/details")}   
       colorScheme="light" 
     
     >

@@ -1,27 +1,27 @@
 import React, {useState, Dispatch, SetStateAction} from 'react';
-import { Input, VStack, Icon, Pressable } from "native-base";
+import { Input, VStack, Icon, Pressable, FormControl } from "native-base";
 import { MaterialIcons } from '@expo/vector-icons';
+import { Dimensions } from 'react-native';
 
 
 
-interface LoginPasswordProps {
+interface CreateUserPasswordProps {
   password: string; 
   setPassword: Dispatch<SetStateAction<string>>;
 }
 
-const LoginPassword:React.FC<LoginPasswordProps> = ({
+const CreateUserPassword:React.FC<CreateUserPasswordProps> = ({
   password, 
   setPassword
 
 }) => {
   const [show, setShow] = useState(false);
+  const width = Dimensions.get('window').width;
 
   return(
-    <Input      
-          w={{
-            base: "75%",
-            md: "25%"
-           }} 
+    <FormControl alignItems="center">
+      <Input     
+          bg="gray.100"        
           value={password}
           onChangeText={ (password) => {
             setPassword(password);
@@ -30,9 +30,12 @@ const LoginPassword:React.FC<LoginPasswordProps> = ({
           InputRightElement={<Pressable onPress={() => setShow(!show)}>
            <Icon as={<MaterialIcons name={show ? "visibility" : "visibility-off"} />} size={5} mr="2" color="muted.400" />
             </Pressable>} placeholder="        パスワード"
-          variant="underlined" />
+            width={width - 40}
+            marginX={20}
+           />
+    </FormControl>
   )
    
 };
 
-export default LoginPassword
+export default CreateUserPassword

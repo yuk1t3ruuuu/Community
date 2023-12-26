@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import { Dimensions } from 'react-native';
 import { VStack, HStack, Heading, IconButton, Icon, Box, Text, View } from 'native-base';
 import { Feather } from '@expo/vector-icons';
-import LoginButton from '../components/LoginButton';
-import SignupButton from '../components/SignupButton';
-import LoginUserName from '../components/LoginUserName';
-import LoginPassword from '../components/LoginPassword';
+import LoginButton from '../src/components/LoginButton';
+import SignupButton from '../src/components/SignupButton';
+import LoginUserName from '../src/components/LoginUserName';
+import LoginPassword from '../src/components/LoginPassword';
 import { color } from 'native-base/lib/typescript/theme/styled-system';
 
 
@@ -14,6 +14,7 @@ export default function LoginOrSignupScreen() {
 
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
+    
 
   return(
     <VStack>
@@ -27,8 +28,12 @@ export default function LoginOrSignupScreen() {
         md: "40%"
        }}/>
       <VStack space={3} w="100%" alignItems="center">
-        <LoginUserName/>
-        <LoginPassword/>
+        <LoginUserName
+          name={name}
+          setName={setName}/>
+        <LoginPassword
+           password={password}
+           setPassword={setPassword}/>
       </VStack>
       <View
        w={{
@@ -53,12 +58,4 @@ export default function LoginOrSignupScreen() {
 
 
   );
-
-
-
-
-
-
-
-
 }

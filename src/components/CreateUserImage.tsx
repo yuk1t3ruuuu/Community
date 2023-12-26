@@ -6,12 +6,12 @@ import * as ImagePicker from 'expo-image-picker';
 
 
 
-interface UserProfileImageProps {
+interface CreateUserImageProps {
   image: string; 
   setImage: Dispatch<SetStateAction<string>>;
 }
 
-const UserProfileActionSheetPage: React.FC<UserProfileImageProps> = ({
+const CreateUserActionSheetPage: React.FC<CreateUserImageProps> = ({
   image, 
   setImage
 }) => {
@@ -183,4 +183,4 @@ const styles = StyleSheet.create({
     }
   });
 
-  export default UserProfileActionSheetPage;
+  export default CreateUserActionSheetPage;

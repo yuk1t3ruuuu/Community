@@ -1,7 +1,9 @@
 import React from 'react';
-import CommunityCreateScreen from './src/screense/CommunityCreateScreen';
-import UserProfileScree from './src/screense/UserProfileScreen';
-import LoginOrSignupScreen from './src/screense/LoginOrSignupScreen';
+import CommunityCreateScreen from './app/CommunityCreateScreen';
+import UserProfileScree from './app/UserProfileScreen';
+import LoginOrSignupScreen from './app/LoginOrSignupScreen';
+import CreateUserGender from './src/components/CreateUserGender';
+import UserCreateScreen from './app/UserCreateScreen';
 import { NativeBaseProvider } from 'native-base';
 import { SafeAreaView } from 'react-native';
 
@@ -10,7 +12,7 @@ export default function App() {
   return (
       <NativeBaseProvider>
         <SafeAreaView style={{flex: 1}}>
-          <LoginOrSignupScreen/>
+        <UserCreateScreen/>
         </SafeAreaView>
       </NativeBaseProvider>
   );

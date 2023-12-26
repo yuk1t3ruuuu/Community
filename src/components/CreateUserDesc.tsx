@@ -4,13 +4,13 @@ import { Dimensions } from 'react-native';
 
 
 
-interface CommunityDescProps {
+interface CreateUserDescProps {
   description: string; 
   setDescription: Dispatch<SetStateAction<string>>;
 }
 
 
-const CommunityDesc: React.FC<CommunityDescProps> = ({
+const CreateUserDesc: React.FC<CreateUserDescProps> = ({
   description, 
   setDescription
 }) => {
@@ -21,7 +21,7 @@ const CommunityDesc: React.FC<CommunityDescProps> = ({
     <FormControl alignItems="center">          
       <Input 
         bg="gray.100"
-        placeholder='コミュニティー説明を入力'
+        placeholder='自己紹介を入力'
         value={description}
         onChangeText={ (description) => {
           setDescription(description);
@@ -38,4 +38,4 @@ const CommunityDesc: React.FC<CommunityDescProps> = ({
 }
 
 
-export default CommunityDesc;
+export default CreateUserDesc;
